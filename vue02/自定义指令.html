@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-xixi="name" type="text">
+    </div>
+    <script>
+        //  Vue.directive('指令名',配置项)
+        // 使用自定义指令时  v-指令名
+        // inserted被指令绑定的元素，插入到真实DOM的时候自动执行
+        Vue.directive('xixi',{
+            inserted(el,data){
+                console.log("元素插入",el,data);
+
+                el.focus();
+            }
+        })
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                name:"1111"
+            },
+            methods:{
+
+            }
+        })
+    </script>
+</body>
+</html>
